@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f3;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        /* Link Button Styling */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML Tags</h1>
+
+    <h2>Basic HTML Document</h2>
+    <p>Every HTML document begins with a document type declaration, setting the foundation for the webpage. This section
+        introduces basic HTML tags that structure the page, such as &lt;head&gt;, &lt;body&gt;, and &lt;title&gt;.
+        Although this is not mandatory, it is a good convention to start the document with the below-mentioned tag.</p>
+
+    <p>Below mentioned are the basic HTML tags that divide the whole page into various parts like head, body, etc.</p>
+
+    <h3>Basic HTML Tags for Document Structure</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tags</th>
+                <th>Descriptions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;html&gt;</td>
+                <td>Encloses the entire HTML document, serving as the root element for all HTML content.</td>
+            </tr>
+            <tr>
+                <td>&lt;head&gt;</td>
+                <td>Contains header information about the webpage, including title, meta tags, and linked stylesheets.
+                    It is part of the document’s structure but is not displayed on the webpage.</td>
+            </tr>
+            <tr>
+                <td>&lt;title&gt;</td>
+                <td>Used within the &lt;head&gt; section to define the title of the HTML document. It appears in the
+                    browser tab or window and provides a brief description of the webpage’s content.</td>
+            </tr>
+            <tr>
+                <td>&lt;body&gt;</td>
+                <td>Encloses the visible content of the webpage, such as text, images, audio, videos, and links. All
+                    elements within this tag are displayed on the actual webpage when viewed in a browser.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="index.html">Back to Home</a>
+
+</body>
+
+</html>

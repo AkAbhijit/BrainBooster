@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #16a085;
+            font-size: 1.5em;
+            margin-top: 20px;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 5px;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto 15px;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        /* Code styling */
+        pre {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #c0392b;
+            max-width: 80%;
+            margin: 0 auto 20px;
+            overflow-x: auto;
+        }
+
+        /* Table styling */
+        table {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px 20px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #16a085;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        td {
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML Forms</h1>
+
+    <p>HTML Forms utilize the &lt;form&gt; element as a powerful tool to collect user input through a variety of
+        interactive controls.</p>
+    <p>These controls range from text fields, numeric inputs, email fields, password fields, to checkboxes, radio
+        buttons, and submit buttons. In essence, an HTML Form serves as a versatile container for numerous input
+        elements, thereby enhancing user interaction.</p>
+
+    <h2>Syntax:</h2>
+    <pre>
+&lt;form&gt;
+    &lt;!-- form elements --&gt;
+&lt;/form&gt;
+    </pre>
+
+    <h2>Form Elements</h2>
+    <p>The HTML &lt;form&gt; comprises several elements, each serving a unique purpose. For instance, the &lt;label&gt;
+        element is used to define labels for other &lt;form&gt; elements. The &lt;input&gt; element, on the other hand,
+        is versatile and can be used to capture various types of input data such as text, password, email, and more,
+        simply by altering its type attribute. Here’s a list of HTML form elements:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;label&gt;</td>
+                <td>Defines labels for &lt;form&gt; elements.</td>
+            </tr>
+            <tr>
+                <td>&lt;input&gt;</td>
+                <td>Captures various input types like text, password, and email, by changing its type.</td>
+            </tr>
+            <tr>
+                <td>&lt;button&gt;</td>
+                <td>Creates a clickable button for controlling other elements or triggering actions.</td>
+            </tr>
+            <tr>
+                <td>&lt;select&gt;</td>
+                <td>Generates a drop-down list.</td>
+            </tr>
+            <tr>
+                <td>&lt;textarea&gt;</td>
+                <td>Captures long text inputs.</td>
+            </tr>
+            <tr>
+                <td>&lt;fieldset&gt;</td>
+                <td>Groups related data by drawing a box around other elements.</td>
+            </tr>
+            <tr>
+                <td>&lt;legend&gt;</td>
+                <td>Adds a caption for fieldset elements.</td>
+            </tr>
+            <tr>
+                <td>&lt;datalist&gt;</td>
+                <td>Defines a list of options for input controls.</td>
+            </tr>
+            <tr>
+                <td>&lt;output&gt;</td>
+                <td>Displays the result of calculations.</td>
+            </tr>
+            <tr>
+                <td>&lt;option&gt;</td>
+                <td>Defines items within a drop-down list.</td>
+            </tr>
+            <tr>
+                <td>&lt;optgroup&gt;</td>
+                <td>Groups related options in a drop-down list.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Commonly Used Input Types in HTML Forms</h2>
+    <p>HTML forms utilize various input types to collect specific data from users. Here are some of the most commonly
+        used:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Input Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;input type="text"&gt;</td>
+                <td>Single-line text input</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="password"&gt;</td>
+                <td>Password input field</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="submit"&gt;</td>
+                <td>Submit button</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="reset"&gt;</td>
+                <td>Reset button</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="radio"&gt;</td>
+                <td>Radio button for single-choice selection</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="email"&gt;</td>
+                <td>Email address input with validation</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="number"&gt;</td>
+                <td>Number input with min, max, and step options</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="checkbox"&gt;</td>
+                <td>Checkbox for multiple selections</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="date"&gt;</td>
+                <td>Date selection</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="time"&gt;</td>
+                <td>Time selection</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="file"&gt;</td>
+                <td>File upload field</td>
+            </tr>
+        </tbody>
+    </table>
+    <center><a href="index.html">Back to Home</a></center>
+</body>
+
+</html>

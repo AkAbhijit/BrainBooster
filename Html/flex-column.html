@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flex Column Demo</title>
+    <link rel="stylesheet" href="../Assets/Css/Flexbox_C.css">
+    <style>
+        .container {
+            display: flex;
+            height: 780px;
+            border: 2px solid black
+        }
+
+        .column-Dimen {
+            width: 50px;
+            height: 100%;
+            border: 2px solid black
+        }
+
+        .column1 {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .column2 {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .column3 {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+        }
+
+        .column4 {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .red {
+            background-color: red;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        .green {
+            background-color: green;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        .blue {
+            background-color: blue;
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        .box-dimen {
+            width: 100px;
+            height: 100px;
+        }
+        a {
+            color: #008CBA;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #005f6b;
+        }
+
+
+        .btn-link {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-link:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="column1 column-Dimen">
+            <div class="red box-dimen"></div>
+            <div class="green box-dimen"></div>
+            <div class="blue box-dimen"></div>
+        </div>
+
+        <div class="column2 column-Dimen">
+            <div class="red box-dimen"></div>
+            <div class="green box-dimen"></div>
+            <div class="blue box-dimen"></div>
+        </div>
+
+        <div class="column3 column-Dimen">
+            <div class="red box-dimen"></div>
+            <div class="green box-dimen"></div>
+            <div class="blue box-dimen"></div>
+        </div>
+        <div class="column4 column-Dimen">
+            <div class="red box-dimen"></div>
+            <div class="green box-dimen"></div>
+            <div class="blue box-dimen"></div>
+        </div>
+    </div>
+    <a href="index.html">Back to Home</a>
+</body>
+
+</html>

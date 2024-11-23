@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #333;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e0f7fa;
+        }
+
+        /* Link Button Styling */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+
+        /* Code Block Styling */
+        pre {
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            font-size: 1em;
+            overflow-x: auto;
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HTML Tables</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>What is an HTML Table?</h2>
+            <p>
+                An HTML Table organizes data in rows and columns in a tabular format. Tables are great for presenting
+                data and creating quick references between different types of information. HTML tables are also
+                foundational in many layouts, although CSS grids and flexboxes are more commonly used today.
+            </p>
+        </section>
+
+        <section>
+            <h3>Defining Tables in HTML</h3>
+            <p>
+                An HTML table is defined with the <code>&lt;table&gt;</code> tag. Each row is defined with
+                <code>&lt;tr&gt;</code>, table headers with <code>&lt;th&gt;</code>, and cells with
+                <code>&lt;td&gt;</code>.
+            </p>
+        </section>
+
+        <section>
+            <h3>Table Syntax</h3>
+            <pre>
+<code>
+&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+    table, th, td { border: 1px solid black; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table&gt;
+        &lt;tr&gt;&lt;th&gt;Book Name&lt;/th&gt;&lt;th&gt;Author&lt;/th&gt;&lt;th&gt;Genre&lt;/th&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;The Book Thief&lt;/td&gt;&lt;td&gt;Markus Zusak&lt;/td&gt;&lt;td&gt;Historical&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;The Cruel Prince&lt;/td&gt;&lt;td&gt;Holly Black&lt;/td&gt;&lt;td&gt;Fantasy&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+            </pre>
+        </section>
+
+        <section>
+            <h3>Example Table</h3>
+            <table>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                </tr>
+                <tr>
+                    <td>The Book Thief</td>
+                    <td>Markus Zusak</td>
+                    <td>Historical Fiction</td>
+                </tr>
+                <tr>
+                    <td>The Cruel Prince</td>
+                    <td>Holly Black</td>
+                    <td>Fantasy</td>
+                </tr>
+                <tr>
+                    <td>The Silent Patient</td>
+                    <td>Alex Michaelides</td>
+                    <td>Psychological Fiction</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h3>Common Table Tags</h3>
+            <table>
+                <tr>
+                    <th>Tag</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>&lt;table&gt;</td>
+                    <td>Defines the structure for organizing data.</td>
+                </tr>
+                <tr>
+                    <td>&lt;tr&gt;</td>
+                    <td>Represents a row in the table.</td>
+                </tr>
+                <tr>
+                    <td>&lt;th&gt;</td>
+                    <td>Defines a table header cell, typically bold and centered.</td>
+                </tr>
+                <tr>
+                    <td>&lt;td&gt;</td>
+                    <td>Defines a table data cell.</td>
+                </tr>
+                <tr>
+                    <td>&lt;caption&gt;</td>
+                    <td>Provides a title or description for the table.</td>
+                </tr>
+            </table>
+        </section>
+
+    </main>
+
+    <a href="index.html">Back to Home</a>
+</body>
+
+</html>

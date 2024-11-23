@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to HTML</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin: 15px 0;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        em {
+            color: #3498db;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: disc;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        /* Code Styling */
+        pre {
+            background: #faf3f3;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Link Styling */
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Welcome to HTML</h1>
+
+    <h2>What is HTML?</h2>
+    <pre>
+    <p>HTML, or <strong>HyperText Markup Language</strong>, is the standard markup language used to create web pages. It
+        is a combination of <em>Hypertext</em> and <em>Markup language</em>. The Hypertext defines the link between web
+        pages, and Markup defines the text document within tags to structure the web pages.</p>
+        </pre>
+
+    <p>This language annotates text so that machines can understand and manipulate it accordingly. HTML is
+        human-readable and uses <strong>tags</strong> to define what manipulation has to be done on the text.</p>
+
+    <h2>Basic Structure of an HTML Document</h2>
+    <p>An HTML document is made up of elements enclosed in angle brackets (tags). The basic structure includes:</p>
+
+    <ul>
+        <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declaration to define the document type as HTML5.</li>
+        <li><strong>&lt;html&gt;</strong> - The root element that encloses all HTML content.</li>
+        <li><strong>&lt;head&gt;</strong> - Contains meta information, title, and links to styles or scripts.</li>
+        <li><strong>&lt;body&gt;</strong> - Contains the content of the webpage, including text, images, links, etc.
+        </li>
+    </ul>
+
+    <h2>Example of a Simple HTML Document</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Sample Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;This is a simple HTML document.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+    <p>This is a basic introduction to HTML. It forms the foundation of building webpages. As you continue learning,
+        you'll explore more complex features such as forms, multimedia, and interactive elements.</p>
+
+    <a href="index.html">Back to Home</a>
+
+</body>
+
+</html>

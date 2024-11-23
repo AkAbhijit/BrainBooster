@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AkAbhijit</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1e1e2f;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: #282846;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+
+        thead {
+            background: #39395a;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 15px;
+        }
+
+        th {
+            font-weight: bold;
+            color: #d4d4dc;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.3s ease;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #323254;
+        }
+
+        tbody tr:hover {
+            background: #44446d;
+        }
+
+        td {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        /* Link Styling */
+        a {
+            text-decoration: none;
+            color: #6a11cb;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2575fc;
+        }
+
+        .btn-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #6a11cb;
+            color: #fff;
+            border-radius: 6px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn-link:hover {
+            background: #2575fc;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #282846;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #6a11cb;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #2575fc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>HTML: The Language of the Web</h1>
+        </header>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Introduction to HTML</td>
+                    <td>Learn the basics of HTML structure.</td>
+                    <td><a href="./Html/intro.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>HTML Tags</td>
+                    <td>Explore common HTML tags and their usage.</td>
+                    <td><a href="./Html/tages.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>HTML Table</td>
+                    <td>Creating tables to organize data in HTML.</td>
+                    <td><a href="./Html/tables.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>HTML Forms</td>
+                    <td>How to create and use forms in HTML.</td>
+                    <td><a href="./Html/forms.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Cloning a Website</td>
+                    <td>Cloning a website (pbanks.net).</td>
+                    <td><a href="./pbanks.net/index-2.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Flexbox</td>
+                    <td>Creating flexible Column layouts with Flexbox.</td>
+                    <td><a href="./Html/flex-column.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Flexbox</td>
+                    <td>Creating flexible Row layouts with Flexbox.</td>
+                    <td><a href="./Html/flex-row.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Post Card</td>
+                    <td>Creating post cards using Flex Box.</td>
+                    <td><a href="./Html/Card.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Cloning a Website</td>
+                    <td>Cloing Index.html ( Nelson.cloud )</td>
+                    <td><a href="./Html/Clone.html" class="btn-link">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <footer>
+            <a href="./Html/about.html">About Me</a>
+        </footer>
+    </div>
+</body>
+
+</html>
