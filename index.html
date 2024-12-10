@@ -116,7 +116,6 @@
             background: #2575fc;
         }
 
-
         /* Footer Section */
         footer {
             text-align: center;
@@ -134,6 +133,73 @@
 
         footer a:hover {
             color: #2575fc;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 100%;
+                /* Ensure container width adjusts for mobile */
+                box-shadow: none;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+                margin: 0 auto;
+                /* Center the table */
+            }
+
+            thead {
+                display: none;
+                /* Hide table headers on small screens */
+            }
+
+            tbody tr {
+                display: block;
+                margin-bottom: 15px;
+                border: 1px solid #44446d;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            tbody td {
+                display: block;
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            tbody td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 5px;
+                color: #d4d4dc;
+            }
+
+            .btn-link {
+                display: inline-block;
+                font-size: 0.75rem;
+            }
+
+            footer a {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -154,64 +220,70 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>1</td>
-                    <td>Introduction to HTML</td>
-                    <td>Learn the basics of HTML structure.</td>
-                    <td><a href="./Html/intro.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">1</td>
+                    <td data-label="Task Name">Introduction to HTML</td>
+                    <td data-label="Description">Learn the basics of HTML structure.</td>
+                    <td data-label="Link"><a href="./Html/intro.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>HTML Tags</td>
-                    <td>Explore common HTML tags and their usage.</td>
-                    <td><a href="./Html/tages.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">2</td>
+                    <td data-label="Task Name">HTML Tags</td>
+                    <td data-label="Description">Explore common HTML tags and their usage.</td>
+                    <td data-label="Link"><a href="./Html/tages.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>HTML Table</td>
-                    <td>Creating tables to organize data in HTML.</td>
-                    <td><a href="./Html/tables.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">3</td>
+                    <td data-label="Task Name">HTML Table</td>
+                    <td data-label="Description">Creating tables to organize data in HTML.</td>
+                    <td data-label="Link"><a href="./Html/tables.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>4</td>
-                    <td>HTML Forms</td>
-                    <td>How to create and use forms in HTML.</td>
-                    <td><a href="./Html/forms.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">4</td>
+                    <td data-label="Task Name">HTML Forms</td>
+                    <td data-label="Description">How to create and use forms in HTML.</td>
+                    <td data-label="Link"><a href="./Html/forms.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>5</td>
-                    <td>Cloning a Website</td>
-                    <td>Cloning a website (pbanks.net).</td>
-                    <td><a href="./pbanks.net/index-2.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">5</td>
+                    <td data-label="Task Name">Cloning a Website</td>
+                    <td data-label="Description">Cloning a website (pbanks.net).</td>
+                    <td data-label="Link"><a href="./pbanks.net/index-2.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>6</td>
-                    <td>Flexbox</td>
-                    <td>Creating flexible Column layouts with Flexbox.</td>
-                    <td><a href="./Html/flex-column.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">6</td>
+                    <td data-label="Task Name">Flexbox</td>
+                    <td data-label="Description">Creating flexible Column layouts with Flexbox.</td>
+                    <td data-label="Link"><a href="./Html/flex-column.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>7</td>
-                    <td>Flexbox</td>
-                    <td>Creating flexible Row layouts with Flexbox.</td>
-                    <td><a href="./Html/flex-row.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">7</td>
+                    <td data-label="Task Name">Flexbox</td>
+                    <td data-label="Description">Creating flexible Row layouts with Flexbox.</td>
+                    <td data-label="Link"><a href="./Html/flex-row.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>8</td>
-                    <td>Post Card</td>
-                    <td>Creating post cards using Flex Box.</td>
-                    <td><a href="./Html/Card.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">8</td>
+                    <td data-label="Task Name">Post Card</td>
+                    <td data-label="Description">Creating post cards using Flex Box.</td>
+                    <td data-label="Link"><a href="./Html/Card.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>9</td>
-                    <td>Cloning a Website</td>
-                    <td>Cloing Index.html ( Nelson.cloud )</td>
-                    <td><a href="./Html/Clone.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">9</td>
+                    <td data-label="Task Name">Cloning a Website</td>
+                    <td data-label="Description">Cloning Index.html (Nelson.cloud).</td>
+                    <td data-label="Link"><a href="./Html/Clone.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
-                    <td>10</td>
-                    <td>Cloning a Website</td>
-                    <td>Cloing Index.html ( Imsky.co )</td>
-                    <td><a href="./Html/imsky-co.html" class="btn-link">View</a></td>
+                    <td data-label="Sl No">10</td>
+                    <td data-label="Task Name">Cloning a Website</td>
+                    <td data-label="Description">Cloning Index.html (Imsky.co).</td>
+                    <td data-label="Link"><a href="./Html/imsky-co.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Sl No">11</td>
+                    <td data-label="Task Name">Grid Layout</td>
+                    <td data-label="Description">Some Basic Grid Layouts</td>
+                    <td data-label="Link"><a href="./Html/Grid/Grid-Index.html" class="btn-link">View</a></td>
                 </tr>
             </tbody>
         </table>
