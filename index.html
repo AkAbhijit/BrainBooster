@@ -5,206 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AkAbhijit</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #1e1e2f;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            background: #282846;
-            border-radius: 12px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
-        }
-
-        header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 0;
-            color: #fff;
-        }
-
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 0;
-        }
-
-        thead {
-            background: #39395a;
-        }
-
-        th,
-        td {
-            text-align: left;
-            padding: 15px;
-        }
-
-        th {
-            font-weight: bold;
-            color: #d4d4dc;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-        }
-
-        tbody tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s ease;
-        }
-
-        tbody tr:nth-child(even) {
-            background: #323254;
-        }
-
-        tbody tr:hover {
-            background: #44446d;
-        }
-
-        td {
-            color: #ccc;
-            font-size: 1rem;
-        }
-
-        /* Link Styling */
-        a {
-            text-decoration: none;
-            color: #6a11cb;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: white;
-        }
-
-        .btn-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #6a11cb;
-            color: #fff;
-            border-radius: 6px;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn-link:hover {
-            background: #2575fc;
-        }
-
-        /* Footer Section */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #282846;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #6a11cb;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #2575fc;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            body {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 10px;
-            }
-
-            .container {
-                width: 100%;
-                max-width: 100%;
-                /* Ensure container width adjusts for mobile */
-                box-shadow: none;
-            }
-
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            table {
-                display: block;
-                overflow-x: auto;
-                white-space: nowrap;
-                margin: 0 auto;
-                /* Center the table */
-            }
-
-            thead {
-                display: none;
-                /* Hide table headers on small screens */
-            }
-
-            tbody tr {
-                display: block;
-                margin-bottom: 15px;
-                border: 1px solid #44446d;
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            tbody td {
-                display: block;
-                padding: 10px;
-                font-size: 0.9rem;
-            }
-
-            tbody td::before {
-                content: attr(data-label);
-                font-weight: bold;
-                text-transform: uppercase;
-                display: block;
-                margin-bottom: 5px;
-                color: #d4d4dc;
-            }
-
-            .btn-link {
-                display: inline-block;
-                font-size: 0.75rem;
-            }
-
-            footer a {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./Assets/Css/Style.css">
 </head>
 
-<body>
+<body class="dark-theme">
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     <div class="container">
         <header>
             <h1>HTML: The Language of the Web</h1>
@@ -222,75 +27,118 @@
                 <tr>
                     <td data-label="Sl No">1</td>
                     <td data-label="Task Name">Introduction to HTML</td>
-                    <td data-label="Description">Learn the basics of HTML structure.</td>
+                    <td data-label="Description">Learn the basics of HTML
+                        structure.</td>
                     <td data-label="Link"><a href="./Html/intro.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">2</td>
                     <td data-label="Task Name">HTML Tags</td>
-                    <td data-label="Description">Explore common HTML tags and their usage.</td>
+                    <td data-label="Description">Explore common HTML tags
+                        and their usage.</td>
                     <td data-label="Link"><a href="./Html/tages.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">3</td>
                     <td data-label="Task Name">HTML Table</td>
-                    <td data-label="Description">Creating tables to organize data in HTML.</td>
+                    <td data-label="Description">Creating tables to organize
+                        data in HTML.</td>
                     <td data-label="Link"><a href="./Html/tables.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">4</td>
                     <td data-label="Task Name">HTML Forms</td>
-                    <td data-label="Description">How to create and use forms in HTML.</td>
+                    <td data-label="Description">How to create and use forms
+                        in HTML.</td>
                     <td data-label="Link"><a href="./Html/forms.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">5</td>
                     <td data-label="Task Name">Cloning a Website</td>
-                    <td data-label="Description">Cloning a website (pbanks.net).</td>
-                    <td data-label="Link"><a href="./pbanks.net/index-2.html" class="btn-link">View</a></td>
+                    <td data-label="Description">Cloning a website
+                        (pbanks.net).</td>
+                    <td data-label="Link"><a href="./Html/pbanks.net/index-2.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">6</td>
                     <td data-label="Task Name">Flexbox</td>
-                    <td data-label="Description">Creating flexible Column layouts with Flexbox.</td>
+                    <td data-label="Description">Creating flexible Column
+                        layouts with Flexbox.</td>
                     <td data-label="Link"><a href="./Html/flex-column.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">7</td>
                     <td data-label="Task Name">Flexbox</td>
-                    <td data-label="Description">Creating flexible Row layouts with Flexbox.</td>
+                    <td data-label="Description">Creating flexible Row
+                        layouts with Flexbox.</td>
                     <td data-label="Link"><a href="./Html/flex-row.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">8</td>
                     <td data-label="Task Name">Post Card</td>
-                    <td data-label="Description">Creating post cards using Flex Box.</td>
+                    <td data-label="Description">Creating post cards using
+                        Flex Box.</td>
                     <td data-label="Link"><a href="./Html/Card.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">9</td>
                     <td data-label="Task Name">Cloning a Website</td>
-                    <td data-label="Description">Cloning Index.html (Nelson.cloud).</td>
+                    <td data-label="Description">Cloning Index.html
+                        (Nelson.cloud).</td>
                     <td data-label="Link"><a href="./Html/Clone.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">10</td>
                     <td data-label="Task Name">Cloning a Website</td>
-                    <td data-label="Description">Cloning Index.html (Imsky.co).</td>
+                    <td data-label="Description">Cloning Index.html
+                        (Imsky.co).</td>
                     <td data-label="Link"><a href="./Html/imsky-co.html" class="btn-link">View</a></td>
                 </tr>
                 <tr>
                     <td data-label="Sl No">11</td>
                     <td data-label="Task Name">Grid Layout</td>
-                    <td data-label="Description">Some Basic Grid Layouts</td>
+                    <td data-label="Description">Some Basic Grid
+                        Layouts</td>
                     <td data-label="Link"><a href="./Html/Grid/Grid-Index.html" class="btn-link">View</a></td>
+                </tr>
+                <tr>
+                    <td data-label="Sl No">12</td>
+                    <td data-label="Task Name">Cloning Thumos</td>
+                    <td data-label="Description">Copying Web Layouts</td>
+                    <td data-label="Link"><a href="./Html/Clone/Clone-index.html" class="btn-link">View</a></td>
                 </tr>
             </tbody>
         </table>
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Abhijit Kirtunia, a software developer and tech
+                enthusiast. I specialize in creating
+                intuitive and responsive web applications. My passion lies
+                in coding and solving real-world problems
+                with technology.
+            </p>
+            <a href="./Html/about.html">Learn More</a>
+        </div>
         <footer>
-            <a href="./Html/about.html">About Me</a>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=61554673851488" target="_blank" aria-label="Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://github.com/AkAbhijit" target="_blank" aria-label="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/abhijitkirtunia" target="_blank" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 ❤️ AkAbhijit. All Rights Reserved.</p>
         </footer>
     </div>
+    <script src="./Assets/Js/Theme.js"></script>
 </body>
 
 </html>

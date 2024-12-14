@@ -1,0 +1,70 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  h2.press-title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .press-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .press-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 300px;
+    flex: 1;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 8px;
+  }
+  
+  .headline {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .press-logo img {
+    max-height: 20px;
+  }
+  
+  .view-all {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .view-all a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .view-all a:hover {
+    text-decoration: underline;
+  }
+  
