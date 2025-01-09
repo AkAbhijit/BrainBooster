@@ -1,82 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout COLUMN</title>
-    <style>
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 2rem;
-}
-
-.container {
-    display: flex;
-    border: 2px solid black;
-    width: 80%;
-    height: 100px;
-    gap: 10px;
-}
-
-.box {
-    width: 100px;
-    height: 100%;
-}
-
-.red { background-color: red; }
-.green { background-color: green; }
-.blue { background-color: blue; }
-
-.row1 {
-    justify-content: flex-start;
-}
-
-.row2 {
-    justify-content: center
-}
-
-.row3 {
-    justify-content: flex-end;
-}
-
-.row4 {
-    justify-content: space-evenly;
-}
-
-    </style>
+    <title>Horizontal Flexbox Layout Demo</title>
+    <link rel="stylesheet" href="/Assets/Css/Flexbox_R.css">
 </head>
+
 <body>
-    <div class="container row1">
-        <div class="box red"></div>
-        <div class="box green"></div>
-        <div class="box blue"></div>
+    <div class="container">
+        <h1>Horizontal Flexbox Layout Demo</h1>
+        <div class="flex-demo">
+            <div class="flex-row">
+                <div class="row-title">justify-content: flex-start</div>
+                <div class="flex-content start">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="row-title">justify-content: center</div>
+                <div class="flex-content center">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="row-title">justify-content: flex-end</div>
+                <div class="flex-content end">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="row-title">justify-content: space-between</div>
+                <div class="flex-content space-between">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-button">
+                ← Back to Home
+            </a>
+        </div>
     </div>
 
-    <div class="container row2">
-        <div class="box red"></div>
-        <div class="box green"></div>
-        <div class="box blue"></div>
-    </div>
+    <script>
+        const toggleTheme = document.getElementById('toggleTheme');
+        const toggleWidth = document.getElementById('toggleWidth');
+        const toggleSpacing = document.getElementById('toggleSpacing');
+        const toggleAnimation = document.getElementById('toggleAnimation');
+        const flexContents = document.querySelectorAll('.flex-content');
+        const boxes = document.querySelectorAll('.box');
 
-    <div class="container row3">
-        <div class="box red"></div>
-        <div class="box green"></div>
-        <div class="box blue"></div>
-    </div>
+        toggleTheme.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+        });
 
-    <div class="container row4">
-        <div class="box red"></div>
-        <div class="box green"></div>
-        <div class="box blue"></div>
-    </div>
+        toggleWidth.addEventListener('click', () => {
+            flexContents.forEach(content => {
+                content.style.width = content.style.width === '100%' ? '50%' : '100%';
+            });
+        });
+
+        toggleSpacing.addEventListener('click', () => {
+            flexContents.forEach(content => {
+                content.style.gap = content.style.gap === '1rem' ? '0' : '1rem';
+            });
+        });
+
+        toggleAnimation.addEventListener('click', () => {
+            boxes.forEach(box => {
+                box.style.transition = box.style.transition === 'none' ? 'all 0.3s ease' : 'none';
+            });
+        });
+
+        // Initial animation
+        boxes.forEach((box, index) => {
+            box.style.opacity = '0';
+            box.style.transform = 'translateX(-20px)';
+            setTimeout(() => {
+                box.style.opacity = '1';
+                box.style.transform = 'translateX(0)';
+            }, index * 100);
+        });
+    </script>
 </body>
+
 </html>

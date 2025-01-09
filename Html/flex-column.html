@@ -1,128 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Flex Column Demo</title>
-    <link rel="stylesheet" href="../Assets/Css/Flexbox_C.css">
-    <style>
-        .container {
-            display: flex;
-            height: 780px;
-            border: 2px solid black
-        }
-
-        .column-Dimen {
-            width: 50px;
-            height: 100%;
-            border: 2px solid black
-        }
-
-        .column1 {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        .column2 {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .column3 {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: end;
-        }
-
-        .column4 {
-            width: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .red {
-            background-color: red;
-            margin: 10px;
-            border: 2px solid black;
-        }
-
-        .green {
-            background-color: green;
-            margin: 10px;
-            border: 2px solid black;
-        }
-
-        .blue {
-            background-color: blue;
-            margin: 10px;
-            border: 2px solid black;
-        }
-
-        .box-dimen {
-            width: 100px;
-            height: 100px;
-        }
-        a {
-            color: #008CBA;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a:hover {
-            color: #005f6b;
-        }
-
-
-        .btn-link {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-link:hover {
-            background-color: #555;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Column Guide</title>
+    <link rel="stylesheet" href="/Assets/Css/Flexbox_C.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="column1 column-Dimen">
-            <div class="red box-dimen"></div>
-            <div class="green box-dimen"></div>
-            <div class="blue box-dimen"></div>
+    <nav>
+        <div class="nav-container">
+            <h1>Flexbox Column Demo</h1>
+            <button class="theme-toggle" id="theme-toggle">
+                🌙
+            </button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="flex-demo">
+            <div class="flex-column">
+                <div class="column-title">justify-content: flex-start</div>
+                <div class="flex-content start">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+
+            <div class="flex-column">
+                <div class="column-title">justify-content: center</div>
+                <div class="flex-content center">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+
+            <div class="flex-column">
+                <div class="column-title">justify-content: flex-end</div>
+                <div class="flex-content end">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
+
+            <div class="flex-column">
+                <div class="column-title">justify-content: space-between</div>
+                <div class="flex-content space-between">
+                    <div class="box red"></div>
+                    <div class="box green"></div>
+                    <div class="box blue"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="column2 column-Dimen">
-            <div class="red box-dimen"></div>
-            <div class="green box-dimen"></div>
-            <div class="blue box-dimen"></div>
+        <div class="code-display">
+            <pre><code class="code-block">
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .start { justify-content: flex-start; }
+        .center { justify-content: center; }
+        .end { justify-content: flex-end; }
+        .space-between { justify-content: space-between; }
+            </code></pre>
         </div>
 
-        <div class="column3 column-Dimen">
-            <div class="red box-dimen"></div>
-            <div class="green box-dimen"></div>
-            <div class="blue box-dimen"></div>
-        </div>
-        <div class="column4 column-Dimen">
-            <div class="red box-dimen"></div>
-            <div class="green box-dimen"></div>
-            <div class="blue box-dimen"></div>
+
+
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-button">
+                ← Back to Home
+            </a>
         </div>
     </div>
-    <a href="index.html">Back to Home</a>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function setTheme(isDark) {
+            document.body.classList.toggle('dark', isDark);
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else {
+            setTheme(prefersDark.matches);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.body.classList.contains('dark'));
+        });
+
+        // Interactive Controls
+        function toggleHeight() {
+            const columns = document.querySelectorAll('.flex-column');
+            columns.forEach(column => {
+                column.style.height = column.style.height === '300px' ? '500px' : '300px';
+            });
+        }
+
+        function toggleSpacing() {
+            const contents = document.querySelectorAll('.flex-content');
+            contents.forEach(content => {
+                content.style.gap = content.style.gap === '1rem' ? '0' : '1rem';
+            });
+        }
+
+        function toggleAnimation() {
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach(box => {
+                box.style.transition = box.style.transition === 'none' ?
+                    'transform 0.2s' : 'none';
+            });
+        }
+
+        // Add animation to boxes on load
+        document.querySelectorAll('.box').forEach((box, index) => {
+            box.style.opacity = 0;
+            box.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                box.style.transition = 'opacity 0.5s, transform 0.5s';
+                box.style.opacity = 1;
+                box.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+    </script>
 </body>
 
 </html>

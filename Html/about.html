@@ -1,91 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>Abhijit Kirtunia | Innovative Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Basic reset */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #50c878;
+            --bg-color: #1c1c1c;
+            --text-color: #ffffff;
+            --card-bg: #2a2a2a;
+        }
+
         * {
             margin: 0;
-            font-family: Arial, sans-serif;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Page Styling */
         body {
-            background-color: #1e1e2f;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Main Container */
         .container {
-            background: #27293d;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
             text-align: center;
         }
 
-        /* Headings */
-        h2,
-        h3 {
-            color: #ff6b6b;
-            margin-bottom: 1rem;
+        section {
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
         }
 
-        h3 {
-            margin-top: 1rem;
-            font-size: 1.2rem;
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Paragraph */
-        p {
-            line-height: 1.6;
-            color: #e0e0e0;
-            margin-bottom: 1.5rem;
+        #about {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Button Style */
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: #ff6b6b;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            background: #27293d;
-            border: 2px solid #ff6b6b;
+        #skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .skill-item {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        a:hover {
-            color: #27293d;
-            background: #ff6b6b;
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        #project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            font-size: 2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
     </style>
 </head>
-
 <body>
+    <div id="particles-js"></div>
     <div class="container">
-        <h2>About Me</h2>
-        <p>Hi, I’m <strong>Abhijit Kirtunia</strong>, a passionate software development student with a deep love for
-            coding. I thrive on transforming complex problems into streamlined, functional solutions, and I’m always
-            looking to push my skills to the next level. Currently, I’m immersing myself in the world of software
-            engineering, diving into the intricacies of development and refining my technical expertise.</p>
-        <p>This website marks my journey into building intuitive and engaging web experiences. With a commitment to
-            innovation and simplicity, I aim to create digital solutions that not only work seamlessly but also make an
-            impact.</p>
-        <h3>Thank You for Visiting!</h3>
-        <a href="index.html">Back to Home</a>
+        <header>
+            <h1>Abhijit Kirtunia</h1>
+            <p class="subtitle">Innovative Software Developer</p>
+            <canvas class="animated-bg" id="matrix-rain"></canvas>
+        </header>
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hello! I'm Abhijit, a passionate and innovative software developer with a knack for turning complex problems into elegant solutions. My journey in the world of coding is driven by an insatiable curiosity and a desire to push the boundaries of what's possible in technology.</p>
+                <p>With a strong foundation in software engineering principles and a keen eye for user-centric design, I strive to create applications that not only function flawlessly but also provide intuitive and engaging user experiences. My approach combines cutting-edge technologies with creative problem-solving to deliver solutions that stand out in today's fast-paced digital landscape.</p>
+                <p>When I'm not immersed in lines of code, you can find me exploring the latest tech trends, contributing to open-source projects, or mentoring aspiring developers. I believe in the power of continuous learning and collaboration to drive innovation in our field.</p>
+            </section>
+            <section id="skills">
+                <h2>Skills</h2>
+                <ul id="skill-list"></ul>
+            </section>
+            <section id="projects">
+                <h2>Projects</h2>
+                <div id="project-list"></div>
+            </section>
+        </main>
+        <footer>
+            <p>Let's connect and create something amazing together!</p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </footer>
     </div>
-</body>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Skills data
+        const skills = [
+            'JavaScript', 'React', 'Node.js', 'Python',
+            'Machine Learning', 'Cloud Computing', 'DevOps', 'UI/UX Design'
+        ];
 
+        // Projects data
+        const projects = [
+            { 
+                title: 'AI-Powered Task Manager', 
+                description: 'A smart productivity app that uses machine learning to prioritize and suggest tasks based on user behavior and deadlines.'
+            },
+            { 
+                title: 'Blockchain Voting System', 
+                description: 'A secure and transparent digital voting platform built on blockchain technology, ensuring tamper-proof election results.'
+            },
+            { 
+                title: 'AR Home Decorator', 
+                description: 'An augmented reality app that allows users to visualize furniture and decor in their space before making a purchase.'
+            }
+        ];
+
+        // Populate skills
+        const skillList = document.getElementById('skill-list');
+        skills.forEach(skill => {
+            const li = document.createElement('li');
+            li.textContent = skill;
+            li.classList.add('skill-item');
+            skillList.appendChild(li);
+        });
+
+        // Populate projects
+        const projectList = document.getElementById('project-list');
+        projects.forEach(project => {
+            const div = document.createElement('div');
+            div.classList.add('project-card');
+            div.innerHTML = `
+                <h3 class="project-title">${project.title}</h3>
+                <p>${project.description}</p>
+            `;
+            projectList.appendChild(div);
+        });
+
+        // Typing effect for the subtitle
+        const subtitle = document.querySelector('.subtitle');
+        const text = subtitle.textContent;
+        subtitle.textContent = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                subtitle.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        typeWriter();
+
+        // Matrix rain effect
+        const canvas = document.getElementById('matrix-rain');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const nums = '0123456789';
+
+        const alphabet = katakana + latin + nums;
+
+        const fontSize = 16;
+        const columns = canvas.width/fontSize;
+
+        const rainDrops = [];
+
+        for( let x = 0; x < columns; x++ ) {
+            rainDrops[x] = 1;
+        }
+
+        const draw = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+
+            for(let i = 0; i < rainDrops.length; i++)
+            {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i*fontSize, rainDrops[i]*fontSize);
+
+                if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+
+        setInterval(draw, 30);
+
+        // Scroll reveal effect
+        const revealSection = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const sectionObserver = new IntersectionObserver(revealSection, {
+            root: null,
+            threshold: 0.15,
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Particle.js configuration
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle", stroke: { width: 0, color: "#000000" }, polygon: { nb_sides: 5 }, image: { src: "img/github.svg", width: 100, height: 100 } },
+                opacity: { value: 0.5, random: false, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 6, direction: "none", random: false, straight: false, out_mode: "out", bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true },
+                modes: { grab: { distance: 400, line_linked: { opacity: 1 } }, bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 }, repulse: { distance: 200, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
 </html>

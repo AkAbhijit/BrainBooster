@@ -4,76 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Innovative Attendance Calculator</title>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- Header -->
     <header>
-        <img src="./medhavi-logo.png" alt="Logo" class="logo">
-        <div class="header-content">
-            <h1><i class="fas fa-calendar-check"></i> Attendance Calculator</h1>
-        </div>
+        <h1>Attendance Calculator</h1>
+        <p>Calculate and visualize your attendance easily</p>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <div class="container">
-            <!-- Input Section -->
-            <div class="card">
-                <h2>Enter Your Details</h2>
-                <div class="input-group">
-                    <label for="totalClasses">Total Classes Conducted</label>
-                    <input type="number" id="totalClasses" placeholder="e.g. 50" />
-                </div>
-                <div class="input-group">
-                    <label for="attendedClasses">Classes Attended</label>
-                    <input type="number" id="attendedClasses" placeholder="e.g. 35" />
-                </div>
-                <button id="calculateBtn"><i class="fas fa-calculator"></i> Calculate</button>
+    <main class="container">
+        <div class="card fade-in">
+            <div class="input-group">
+                <label for="totalClasses">Total Classes Conducted</label>
+                <input type="number" id="totalClasses" placeholder="e.g. 50" min="1">
             </div>
+            <div class="input-group">
+                <label for="attendedClasses">Classes Attended</label>
+                <input type="number" id="attendedClasses" placeholder="e.g. 35" min="0">
+            </div>
+            <button id="calculateBtn">Calculate Attendance</button>
+        </div>
 
-            <!-- Result Section -->
-            <div id="resultSection" class="hidden card">
-                <h2>Attendance Results</h2>
-                <p id="currentPercentage"></p>
-                <p id="attendanceMessage"></p>
-                <div id="actionSection" class="hidden">
-                    <button id="missedSessionBtn"><i class="fas fa-minus-circle"></i> Missing Sessions</button>
-                    <br>
-                    <button id="additionalSessionBtn"><i class="fas fa-plus-circle"></i> Attend More Sessions</button>
-                </div>
+        <div id="resultSection" class="card fade-in">
+            <h2>Attendance Results</h2>
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
             </div>
+            <div id="percentageDisplay" class="percentage-display"></div>
+            <p id="attendanceMessage" class="message"></p>
+            <div class="action-buttons">
+                <button id="missedSessionBtn">Simulate Missed Sessions</button>
+                <button id="additionalSessionBtn">Plan Additional Sessions</button>
+            </div>
+        </div>
 
-            <!-- Final Result -->
-            <div id="final-result" class="hidden card">
-                <h2>Final Result</h2>
-                <p id="finalMessage"></p>
+        <div id="finalResult" class="card fade-in">
+            <h2>Updated Attendance Projection</h2>
+            <div id="updatedProgressContainer" class="progress-container">
+                <div id="updatedProgressBar" class="progress-bar"></div>
             </div>
+            <div id="updatedPercentageDisplay" class="percentage-display"></div>
+            <p id="finalMessage" class="message"></p>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Attendance Calculator</p>
-        <p>Crafted with ❤️ by
-            <a href="https://github.com/AkAbhijit" target="_blank">
-                <i class="fab fa-github"></i> Abhijit
-            </a>
-            &
-            <a href="https://github.com/jyotirmayee-mahanta" target="_blank">
-                <i class="fab fa-github"></i> Jyotirmayee
-            </a>
-        </p>
+        <p>&copy; 2024 Innovative Attendance Calculator | Created by Abhijit & Jyotirmayee</p>
     </footer>
 
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

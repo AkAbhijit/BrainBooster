@@ -1,145 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Tags</title>
-    <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background: #eef2f3;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1,
-        h2,
-        h3 {
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin: 20px 0;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
-
-        p {
-            font-size: 1.1em;
-            margin: 10px 0;
-            text-align: center;
-            max-width: 800px;
-        }
-
-        /* Table Styling */
-        table {
-            width: 100%;
-            max-width: 800px;
-            border-collapse: collapse;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        th,
-        td {
-            padding: 15px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #3498db;
-            color: #fff;
-            font-weight: bold;
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-
-        tbody tr:hover {
-            background-color: #e0f7fa;
-        }
-
-        /* Link Button Styling */
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 1.1em;
-        }
-
-        a:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    <title>Complete HTML Tags Reference</title>
+    <link rel="stylesheet" href="/Assets/Css/tags.css">
 </head>
-
 <body>
+    <nav>
+        <div class="nav-container">
+            <h1 style="margin: 0;">HTML Tags Reference</h1>
+            <button class="theme-toggle" id="theme-toggle">
+                🌙
+            </button>
+        </div>
+    </nav>
 
-    <h1>HTML Tags</h1>
+    <main class="container">
+        <header class="header animate-in">
+            <h2>Complete HTML Tags Guide</h2>
+            <p>
+                A comprehensive reference for HTML tags, including their descriptions and common use cases.
+                Use the search box to find specific tags or filter by categories.
+            </p>
+        </header>
 
-    <h2>Basic HTML Document</h2>
-    <p>Every HTML document begins with a document type declaration, setting the foundation for the webpage. This section
-        introduces basic HTML tags that structure the page, such as &lt;head&gt;, &lt;body&gt;, and &lt;title&gt;.
-        Although this is not mandatory, it is a good convention to start the document with the below-mentioned tag.</p>
+        <div class="category-pills animate-in" id="categories">
+            <button class="category-pill active" data-category="all">All Tags</button>
+            <button class="category-pill" data-category="structure">Structure</button>
+            <button class="category-pill" data-category="text">Text</button>
+            <button class="category-pill" data-category="links">Links & Media</button>
+            <button class="category-pill" data-category="lists">Lists</button>
+            <button class="category-pill" data-category="tables">Tables</button>
+            <button class="category-pill" data-category="forms">Forms</button>
+            <button class="category-pill" data-category="semantic">Semantic</button>
+        </div>
 
-    <p>Below mentioned are the basic HTML tags that divide the whole page into various parts like head, body, etc.</p>
+        <div class="search-container animate-in">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                id="searchInput" 
+                class="search-input" 
+                placeholder="Search HTML tags..."
+                aria-label="Search HTML tags"
+            >
+        </div>
 
-    <h3>Basic HTML Tags for Document Structure</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Tags</th>
-                <th>Descriptions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>&lt;html&gt;</td>
-                <td>Encloses the entire HTML document, serving as the root element for all HTML content.</td>
-            </tr>
-            <tr>
-                <td>&lt;head&gt;</td>
-                <td>Contains header information about the webpage, including title, meta tags, and linked stylesheets.
-                    It is part of the document’s structure but is not displayed on the webpage.</td>
-            </tr>
-            <tr>
-                <td>&lt;title&gt;</td>
-                <td>Used within the &lt;head&gt; section to define the title of the HTML document. It appears in the
-                    browser tab or window and provides a brief description of the webpage’s content.</td>
-            </tr>
-            <tr>
-                <td>&lt;body&gt;</td>
-                <td>Encloses the visible content of the webpage, such as text, images, audio, videos, and links. All
-                    elements within this tag are displayed on the actual webpage when viewed in a browser.</td>
-            </tr>
-        </tbody>
-    </table>
+        <section class="table-container animate-in">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody id="tagsTable">
+                    <!-- Structure Tags -->
+                    <tr data-category="structure">
+                        <td class="tag-name">&lt;!DOCTYPE&gt;</td>
+                        <td>Defines the document type and version of HTML</td>
+                        <td>Structure</td>
+                    </tr>
+                    <tr data-category="structure">
+                        <td class="tag-name">&lt;html&gt;</td>
+                        <td>Root element of an HTML page</td>
+                        <td>Structure</td>
+                    </tr>
+                    <tr data-category="structure">
+                        <td class="tag-name">&lt;head&gt;</td>
+                        <td>Contains metadata about the document</td>
+                        <td>Structure</td>
+                    </tr>
+                    <tr data-category="structure">
+                        <td class="tag-name">&lt;body&gt;</td>
+                        <td>Defines the document's body</td>
+                        <td>Structure</td>
+                    </tr>
 
-    <a href="index.html">Back to Home</a>
+                    <!-- Text Tags -->
+                    <tr data-category="text">
+                        <td class="tag-name">&lt;h1&gt; to &lt;h6&gt;</td>
+                        <td>Defines HTML headings</td>
+                        <td>Text</td>
+                    </tr>
+                    <tr data-category="text">
+                        <td class="tag-name">&lt;p&gt;</td>
+                        <td>Defines a paragraph</td>
+                        <td>Text</td>
+                    </tr>
+                    <tr data-category="text">
+                        <td class="tag-name">&lt;br&gt;</td>
+                        <td>Inserts a single line break</td>
+                        <td>Text</td>
+                    </tr>
+                    <tr data-category="text">
+                        <td class="tag-name">&lt;hr&gt;</td>
+                        <td>Creates a horizontal rule (line)</td>
+                        <td>Text</td>
+                    </tr>
 
+                    <!-- Links & Media Tags -->
+                    <tr data-category="links">
+                        <td class="tag-name">&lt;a&gt;</td>
+                        <td>Creates a hyperlink</td>
+                        <td>Links & Media</td>
+                    </tr>
+                    <tr data-category="links">
+                        <td class="tag-name">&lt;img&gt;</td>
+                        <td>Embeds an image</td>
+                        <td>Links & Media</td>
+                    </tr>
+                    <tr data-category="links">
+                        <td class="tag-name">&lt;video&gt;</td>
+                        <td>Embeds video content</td>
+                        <td>Links & Media</td>
+                    </tr>
+                    <tr data-category="links">
+                        <td class="tag-name">&lt;audio&gt;</td>
+                        <td>Embeds sound content</td>
+                        <td>Links & Media</td>
+                    </tr>
+
+                    <!-- List Tags -->
+                    <tr data-category="lists">
+                        <td class="tag-name">&lt;ul&gt;</td>
+                        <td>Defines an unordered list</td>
+                        <td>Lists</td>
+                    </tr>
+                    <tr data-category="lists">
+                        <td class="tag-name">&lt;ol&gt;</td>
+                        <td>Defines an ordered list</td>
+                        <td>Lists</td>
+                    </tr>
+                    <tr data-category="lists">
+                        <td class="tag-name">&lt;li&gt;</td>
+                        <td>Defines a list item</td>
+                        <td>Lists</td>
+                    </tr>
+                    <tr data-category="lists">
+                        <td class="tag-name">&lt;dl&gt;</td>
+                        <td>Defines a description list</td>
+                        <td>Lists</td>
+                    </tr>
+
+                    <!-- Table Tags -->
+                    <tr data-category="tables">
+                        <td class="tag-name">&lt;table&gt;</td>
+                        <td>Defines a table</td>
+                        <td>Tables</td>
+                    </tr>
+                    <tr data-category="tables">
+                        <td class="tag-name">&lt;tr&gt;</td>
+                        <td>Defines a table row</td>
+                        <td>Tables</td>
+                    </tr>
+                    <tr data-category="tables">
+                        <td class="tag-name">&lt;td&gt;</td>
+                        <td>Defines a table cell</td>
+                        <td>Tables</td>
+                    </tr>
+                    <tr data-category="tables">
+                        <td class="tag-name">&lt;th&gt;</td>
+                        <td>Defines a table header</td>
+                        <td>Tables</td>
+                    </tr>
+
+                    <!-- Form Tags -->
+                    <tr data-category="forms">
+                        <td class="tag-name">&lt;form&gt;</td>
+                        <td>Defines an HTML form</td>
+                        <td>Forms</td>
+                    </tr>
+                    <tr data-category="forms">
+                        <td class="tag-name">&lt;input&gt;</td>
+                        <td>Defines an input control</td>
+                        <td>Forms</td>
+                    </tr>
+                    <tr data-category="forms">
+                        <td class="tag-name">&lt;textarea&gt;</td>
+                        <td>Defines a multiline input control</td>
+                        <td>Forms</td>
+                    </tr>
+                    <tr data-category="forms">
+                        <td class="tag-name">&lt;button&gt;</td>
+                        <td>Defines a clickable button</td>
+                        <td>Forms</td>
+                    </tr>
+
+                    <!-- Semantic Tags -->
+                    <tr data-category="semantic">
+                        <td class="tag-name">&lt;article&gt;</td>
+                        <td>Defines an article</td>
+                        <td>Semantic</td>
+                    </tr>
+                    <tr data-category="semantic">
+                        <td class="tag-name">&lt;section&gt;</td>
+                        <td>Defines a section</td>
+                        <td>Semantic</td>
+                    </tr>
+                    <tr data-category="semantic">
+                        <td class="tag-name">&lt;nav&gt;</td>
+                        <td>Defines navigation links</td>
+                        <td>Semantic</td>
+                    </tr>
+                    <tr data-category="semantic">
+                        <td class="tag-name">&lt;header&gt;</td>
+                        <td>Defines a header for a document or section</td>
+                        <td>Semantic</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-button">
+                ← Back to Home
+            </a>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function setTheme(isDark) {
+            document.body.classList.toggle('dark', isDark);
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else {
+            setTheme(prefersDark.matches);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.body.classList.contains('dark'));
+        });
+
+        // Category Filter
+        const categoryPills = document.querySelectorAll('.category-pill');
+        const rows = Array.from(document.querySelectorAll('#tagsTable tr'));
+
+        categoryPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                // Update active state
+                categoryPills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+
+                // Filter rows
+                const category = pill.dataset.category;
+                rows.forEach(row => {
+                    if (category === 'all' || row.dataset.category === category) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const activeCategory = document.querySelector('.category-pill.active').dataset.category;
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const category = row.dataset.category;
+                const matchesSearch = text.includes(searchTerm);
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                
+                row.style.display = matchesSearch && matchesCategory ? '' : 'none';
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
-
 </html>

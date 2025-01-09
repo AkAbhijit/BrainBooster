@@ -4,132 +4,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to HTML</title>
-    <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        h1,
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin: 20px 0;
-        }
-
-        p {
-            font-size: 1.1em;
-            margin: 15px 0;
-        }
-
-        strong {
-            color: #2c3e50;
-        }
-
-        em {
-            color: #3498db;
-        }
-
-        /* List Styling */
-        ul {
-            list-style-type: disc;
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        /* Code Styling */
-        pre {
-            background: #faf3f3;
-            padding: 15px;
-            border-left: 5px solid #3498db;
-            overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        /* Link Styling */
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        a:hover {
-            background-color: #2980b9;
-        }
-    </style>
+    <meta name="description" content="Learn HTML fundamentals with interactive examples and comprehensive guides">
+    <title>HTML Guide - Interactive Learning</title>
+    <link rel="stylesheet" href="/Assets/Css/Intro.css">
 </head>
 
 <body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
 
-    <h1>Welcome to HTML</h1>
+    <nav>
+        <div class="nav-container">
+            <a href="#top" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                    <polyline points="13 2 13 9 20 9" />
+                </svg>
+                HTML Guide
+            </a>
+            <div class="nav-buttons">
+                <button class="button theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </nav>
 
-    <h2>What is HTML?</h2>
-    <pre>
-    <p>HTML, or <strong>HyperText Markup Language</strong>, is the standard markup language used to create web pages. It
-        is a combination of <em>Hypertext</em> and <em>Markup language</em>. The Hypertext defines the link between web
-        pages, and Markup defines the text document within tags to structure the web pages.</p>
-        </pre>
+    <main class="container">
+        <div class="content">
+            <div class="nav-pills">
+                <button class="nav-pill active" onclick="scrollToSection('intro')">Introduction</button>
+                <button class="nav-pill" onclick="scrollToSection('structure')">Structure</button>
+                <button class="nav-pill" onclick="scrollToSection('elements')">Elements</button>
+                <button class="nav-pill" onclick="scrollToSection('examples')">Examples</button>
+                <button class="nav-pill" onclick="scrollToSection('resources')">Resources</button>
+            </div>
 
-    <p>This language annotates text so that machines can understand and manipulate it accordingly. HTML is
-        human-readable and uses <strong>tags</strong> to define what manipulation has to be done on the text.</p>
+            <section id="intro" class="animate-in">
+                <h1>Welcome to HTML</h1>
+                <p class="subtitle">Your interactive guide to web development fundamentals</p>
 
-    <h2>Basic Structure of an HTML Document</h2>
-    <p>An HTML document is made up of elements enclosed in angle brackets (tags). The basic structure includes:</p>
+                <div class="section">
+                    <h2>What is HTML?</h2>
+                    <p>
+                        HTML (HyperText Markup Language) is the foundation of web development. It's a markup language
+                        that defines the structure and content of web pages through a series of elements and tags.
+                    </p>
+                    <div class="interactive-demo">
+                        <h3>Key Concepts:</h3>
+                        <ul style="list-style: none; margin-left: 1rem;">
+                            <li>✨ Structure web content</li>
+                            <li>🔗 Create hyperlinks</li>
+                            <li>📱 Support accessibility</li>
+                            <li>🎨 Style with CSS</li>
+                            <li>⚡ Enhance with JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <ul>
-        <li><strong>&lt;!DOCTYPE html&gt;</strong> - Declaration to define the document type as HTML5.</li>
-        <li><strong>&lt;html&gt;</strong> - The root element that encloses all HTML content.</li>
-        <li><strong>&lt;head&gt;</strong> - Contains meta information, title, and links to styles or scripts.</li>
-        <li><strong>&lt;body&gt;</strong> - Contains the content of the webpage, including text, images, links, etc.
-        </li>
-    </ul>
+            <section id="structure" class="animate-in">
+                <div class="section">
+                    <h2>Basic Structure</h2>
+                    <p>Every HTML document follows a standard structure that includes several key elements:</p>
 
-    <h2>Example of a Simple HTML Document</h2>
-    <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+                    <div class="tag-grid">
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;!DOCTYPE html&gt;</code>
+                            <p class="tag-description">Declares that this is an HTML5 document</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;html&gt;</code>
+                            <p class="tag-description">The root element of an HTML page</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;head&gt;</code>
+                            <p class="tag-description">Contains meta information about the document</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;body&gt;</code>
+                            <p class="tag-description">Defines the document's body content</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="elements" class="animate-in">
+                <div class="section">
+                    <h2>HTML Elements</h2>
+                    <p>HTML elements are the building blocks of web pages. Here are some commonly used elements:</p>
+
+                    <div class="tag-grid">
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;h1&gt; to &lt;h6&gt;</code>
+                            <p class="tag-description">Headings of different levels</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;p&gt;</code>
+                            <p class="tag-description">Paragraph text</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;a&gt;</code>
+                            <p class="tag-description">Creates hyperlinks</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;img&gt;</code>
+                            <p class="tag-description">Embeds images</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;ul&gt; and &lt;ol&gt;</code>
+                            <p class="tag-description">Unordered and ordered lists</p>
+                        </div>
+                        <div class="tag-item">
+                            <code class="tag-name">&lt;div&gt;</code>
+                            <p class="tag-description">Container for flow content</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="examples" class="animate-in">
+                <div class="section">
+                    <h2>Example Code</h2>
+                    <p>Here's a simple HTML document structure:</p>
+
+                    <div class="code-block">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
-    &lt;title&gt;Sample Page&lt;/title&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First HTML Page&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;h1&gt;Hello, World!&lt;/h1&gt;
-    &lt;p&gt;This is a simple HTML document.&lt;/p&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML page!&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Item 1&lt;/li&gt;
+        &lt;li&gt;Item 2&lt;/li&gt;
+        &lt;li&gt;Item 3&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;a href="https://example.com"&gt;Visit Example.com&lt;/a&gt;
 &lt;/body&gt;
-&lt;/html&gt;
-    </pre>
-    <p>This is a basic introduction to HTML. It forms the foundation of building webpages. As you continue learning,
-        you'll explore more complex features such as forms, multimedia, and interactive elements.</p>
+&lt;/html&gt;</code></pre>
+                        <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                    </div>
+                </div>
+            </section>
 
-    <a href="index.html">Back to Home</a>
+            <section id="resources" class="animate-in">
+                <div class="section">
+                    <h2>Additional Resources</h2>
+                    <p>Continue your HTML learning journey with these resources:</p>
 
+                    <div class="tag-grid">
+                        <a href="tables.html" class="tag-item">
+                            <code class="tag-name">HTML Tables</code>
+                            <p class="tag-description">Learn how to create and style tables</p>
+                        </a>
+                        <a href="forms.html" class="tag-item">
+                            <code class="tag-name">HTML Forms</code>
+                            <p class="tag-description">Create interactive forms</p>
+                        </a>
+                        <a href="semantic.html" class="tag-item">
+                            <code class="tag-name">Semantic HTML</code>
+                            <p class="tag-description">Write meaningful markup</p>
+                        </a>
+                        <a href="multimedia.html" class="tag-item">
+                            <code class="tag-name">Multimedia</code>
+                            <p class="tag-description">Add images, video, and audio</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center;">
+                <a href="../index.html" class="button button-primary">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> HTML Guide. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function setTheme(isDark) {
+            document.body.classList.toggle('dark', isDark);
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else {
+            setTheme(prefersDark.matches);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.body.classList.contains('dark'));
+        });
+
+        // Progress Bar
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        }
+
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Navigation Pills
+        const navPills = document.querySelectorAll('.nav-pill');
+        const sections = document.querySelectorAll('section');
+
+        function updateActiveSection() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navPills.forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.textContent.toLowerCase().includes(current)) {
+                    pill.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveSection);
+
+        // Smooth scroll to sections
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Copy Code Function
+        function copyCode(button) {
+            const pre = button.parentNode;
+            const code = pre.querySelector('code');
+            const text = code.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Set Current Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

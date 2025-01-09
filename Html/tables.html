@@ -4,209 +4,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Tables</title>
-    <style>
-        /* General Styling */
-        body {
-            font-family: Arial, sans-serif;
-            background: #f3f4f6;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-top: 0;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin: 20px 0;
-        }
-
-        h3 {
-            font-size: 1.5em;
-            margin: 20px 0;
-        }
-
-        /* Table Styling */
-        table {
-            width: 100%;
-            max-width: 800px;
-            border-collapse: collapse;
-            margin: 20px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        th,
-        td {
-            padding: 15px;
-            text-align: left;
-            border: 1px solid #333;
-        }
-
-        th {
-            background-color: #3498db;
-            color: #fff;
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-
-        tbody tr:hover {
-            background-color: #e0f7fa;
-        }
-
-        /* Link Button Styling */
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 1.1em;
-        }
-
-        a:hover {
-            background-color: #2980b9;
-        }
-
-        /* Code Block Styling */
-        pre {
-            background-color: #f3f4f6;
-            padding: 15px;
-            border-left: 5px solid #3498db;
-            font-size: 1em;
-            overflow-x: auto;
-            width: 90%;
-            margin: auto;
-        }
-    </style>
+    <title>HTML Tables Guide - Interactive Learning</title>
+    <link rel="stylesheet" href="/Assets/Css/table.css">
 </head>
 
 <body>
-    <header>
-        <h1>HTML Tables</h1>
-    </header>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
 
-    <main>
-        <section>
-            <h2>What is an HTML Table?</h2>
-            <p>
-                An HTML Table organizes data in rows and columns in a tabular format. Tables are great for presenting
-                data and creating quick references between different types of information. HTML tables are also
-                foundational in many layouts, although CSS grids and flexboxes are more commonly used today.
-            </p>
-        </section>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 3h18v18H3zM3 9h18M3 15h18M9 9v12M15 9v12" />
+                </svg>
+                HTML Tables
+            </div>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </nav>
 
-        <section>
-            <h3>Defining Tables in HTML</h3>
-            <p>
-                An HTML table is defined with the <code>&lt;table&gt;</code> tag. Each row is defined with
-                <code>&lt;tr&gt;</code>, table headers with <code>&lt;th&gt;</code>, and cells with
-                <code>&lt;td&gt;</code>.
-            </p>
-        </section>
+    <main class="container">
+        <div class="content">
+            <div class="nav-pills" id="nav-pills">
+                <button class="nav-pill active" onclick="scrollToSection('intro')">Introduction</button>
+                <button class="nav-pill" onclick="scrollToSection('syntax')">Table Syntax</button>
+                <button class="nav-pill" onclick="scrollToSection('example')">Interactive Example</button>
+                <button class="nav-pill" onclick="scrollToSection('advanced')">Advanced Features</button>
+                <button class="nav-pill" onclick="scrollToSection('reference')">Reference</button>
+            </div>
 
-        <section>
-            <h3>Table Syntax</h3>
-            <pre>
-<code>
-&lt;!-- index.html --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;style&gt;
-    table, th, td { border: 1px solid black; }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;table&gt;
-        &lt;tr&gt;&lt;th&gt;Book Name&lt;/th&gt;&lt;th&gt;Author&lt;/th&gt;&lt;th&gt;Genre&lt;/th&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;The Book Thief&lt;/td&gt;&lt;td&gt;Markus Zusak&lt;/td&gt;&lt;td&gt;Historical&lt;/td&gt;&lt;/tr&gt;
-        &lt;tr&gt;&lt;td&gt;The Cruel Prince&lt;/td&gt;&lt;td&gt;Holly Black&lt;/td&gt;&lt;td&gt;Fantasy&lt;/td&gt;&lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code>
-            </pre>
-        </section>
+            <section id="intro" class="animate-in">
+                <h2>What is an HTML Table?</h2>
+                <p>
+                    HTML Tables are powerful tools for organizing and displaying data in a structured format. They
+                    create a grid-like structure of rows and columns, making it easy to present information in a clear
+                    and organized manner. While tables were historically used for page layouts, modern web development
+                    best practices reserve tables specifically for tabular data.
+                </p>
+                <p>
+                    Key benefits of HTML tables include:
+                </p>
+                <ul style="margin-left: 2rem; margin-bottom: 1rem; color: var(--muted-foreground);">
+                    <li>Organized presentation of data</li>
+                    <li>Built-in accessibility features</li>
+                    <li>Easy comparison of related information</li>
+                    <li>Support for complex data structures</li>
+                </ul>
+            </section>
 
-        <section>
-            <h3>Example Table</h3>
-            <table>
-                <tr>
-                    <th>Book Name</th>
-                    <th>Author</th>
-                    <th>Genre</th>
-                </tr>
-                <tr>
-                    <td>The Book Thief</td>
-                    <td>Markus Zusak</td>
-                    <td>Historical Fiction</td>
-                </tr>
-                <tr>
-                    <td>The Cruel Prince</td>
-                    <td>Holly Black</td>
-                    <td>Fantasy</td>
-                </tr>
-                <tr>
-                    <td>The Silent Patient</td>
-                    <td>Alex Michaelides</td>
-                    <td>Psychological Fiction</td>
-                </tr>
-            </table>
-        </section>
+            <section id="syntax" class="animate-in">
+                <h3>Table Syntax and Structure</h3>
+                <p>
+                    HTML tables are built using a combination of elements that work together to create the table
+                    structure. Each element has a specific role in defining the table's layout and content.
+                </p>
 
-        <section>
-            <h3>Common Table Tags</h3>
-            <table>
-                <tr>
-                    <th>Tag</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>&lt;table&gt;</td>
-                    <td>Defines the structure for organizing data.</td>
-                </tr>
-                <tr>
-                    <td>&lt;tr&gt;</td>
-                    <td>Represents a row in the table.</td>
-                </tr>
-                <tr>
-                    <td>&lt;th&gt;</td>
-                    <td>Defines a table header cell, typically bold and centered.</td>
-                </tr>
-                <tr>
-                    <td>&lt;td&gt;</td>
-                    <td>Defines a table data cell.</td>
-                </tr>
-                <tr>
-                    <td>&lt;caption&gt;</td>
-                    <td>Provides a title or description for the table.</td>
-                </tr>
-            </table>
-        </section>
+                <pre><code>&lt;table&gt;
+    &lt;caption&gt;Popular Books&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Book Name&lt;/th&gt;
+            &lt;th&gt;Author&lt;/th&gt;
+            &lt;th&gt;Genre&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;The Book Thief&lt;/td&gt;
+            &lt;td&gt;Markus Zusak&lt;/td&gt;
+            &lt;td&gt;Historical Fiction&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code><button class="copy-button" onclick="copyCode(this)">Copy</button></pre>
+            </section>
 
+            <section id="example" class="animate-in">
+                <h3>Interactive Example</h3>
+                <p>
+                    Experiment with this interactive table example. Try adding rows, sorting columns, and toggling
+                    different features.
+                </p>
+
+                <div class="interactive-demo">
+                    <div class="demo-controls">
+                        <button class="demo-button" onclick="addRow()">Add Row</button>
+                        <button class="demo-button" onclick="sortTable()">Sort by Name</button>
+                        <button class="demo-button" onclick="toggleStriped()">Toggle Striped Rows</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table id="demo-table">
+                            <thead>
+                                <tr>
+                                    <th>Book Name</th>
+                                    <th>Author</th>
+                                    <th>Genre</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>The Book Thief</td>
+                                    <td>Markus Zusak</td>
+                                    <td>Historical Fiction</td>
+                                    <td><button class="demo-button" onclick="deleteRow(this)">Delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td>The Cruel Prince</td>
+                                    <td>Holly Black</td>
+                                    <td>Fantasy</td>
+                                    <td><button class="demo-button" onclick="deleteRow(this)">Delete</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="advanced" class="animate-in">
+                <h3>Advanced Table Features</h3>
+                <p>
+                    HTML tables support several advanced features that enhance their functionality and appearance:
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>Spanning Cells</td>
+                            <td>Merge cells across rows or columns</td>
+                            <td><span class="inline-code">colspan="2"</span></td>
+                        </tr>
+                        <tr>
+                            <td>Table Sections</td>
+                            <td>Organize table into header, body, and footer</td>
+                            <td><span class="inline-code">&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td>Column Groups</td>
+                            <td>Define properties for entire columns</td>
+                            <td><span class="inline-code">&lt;colgroup&gt;, &lt;col&gt;</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="reference" class="animate-in">
+                <h3>Quick Reference</h3>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Tag</th>
+                            <th>Description</th>
+                            <th>Attributes</th>
+                        </tr>
+                        <tr>
+                            <td><span class="inline-code">&lt;table&gt;</span></td>
+                            <td>Defines a table</td>
+                            <td>border, cellpadding, cellspacing</td>
+                        </tr>
+                        <tr>
+                            <td><span class="inline-code">&lt;tr&gt;</span></td>
+                            <td>Defines a table row</td>
+                            <td>align, valign</td>
+                        </tr>
+                        <tr>
+                            <td><span class="inline-code">&lt;th&gt;</span></td>
+                            <td>Defines a header cell</td>
+                            <td>colspan, rowspan, scope</td>
+                        </tr>
+                        <tr>
+                            <td><span class="inline-code">&lt;td&gt;</span></td>
+                            <td>Defines a data cell</td>
+                            <td>colspan, rowspan</td>
+                        </tr>
+                        <tr>
+                            <td><span class="inline-code">&lt;caption&gt;</span></td>
+                            <td>Defines a table caption</td>
+                            <td>align</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <div style="text-align: center;">
+                <a href="../index.html" class="back-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
     </main>
 
-    <a href="index.html">Back to Home</a>
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function setTheme(isDark) {
+            document.body.classList.toggle('dark', isDark);
+            themeToggle.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme === 'dark');
+        } else {
+            setTheme(prefersDark.matches);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            setTheme(!document.body.classList.contains('dark'));
+        });
+
+        // Progress Bar
+        function updateProgressBar() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        }
+
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Navigation Pills
+        const navPills = document.querySelectorAll('.nav-pill');
+        const sections = document.querySelectorAll('section');
+
+        function updateActiveSection() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navPills.forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.textContent.toLowerCase().includes(current)) {
+                    pill.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveSection);
+
+        // Smooth scroll to sections
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            const navHeight = document.querySelector('nav').offsetHeight;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Interactive Demo Functions
+        function addRow() {
+            const table = document.getElementById('demo-table').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            const books = [
+                ['The Way of Kings', 'Brandon Sanderson', 'Fantasy'],
+                ['Project Hail Mary', 'Andy Weir', 'Science Fiction'],
+                ['Dune', 'Frank Herbert', 'Science Fiction'],
+                ['The Night Circus', 'Erin Morgenstern', 'Fantasy']
+            ];
+            const randomBook = books[Math.floor(Math.random() * books.length)];
+
+            newRow.innerHTML = `
+                <td>${randomBook[0]}</td>
+                <td>${randomBook[1]}</td>
+                <td>${randomBook[2]}</td>
+                <td><button class="demo-button" onclick="deleteRow(this)">Delete</button></td>
+            `;
+
+            newRow.style.animation = 'fadeIn 0.5s ease-out';
+        }
+
+        function deleteRow(btn) {
+            const row = btn.parentNode.parentNode;
+            row.style.animation = 'fadeIn 0.5s ease-out reverse';
+            setTimeout(() => {
+                row.parentNode.removeChild(row);
+            }, 500);
+        }
+
+        function sortTable() {
+            const table = document.getElementById('demo-table');
+            const rows = Array.from(table.getElementsByTagName('tbody')[0].getElementsByTagName('tr'));
+            const sortedRows = rows.sort((a, b) => {
+                const aText = a.cells[0].textContent;
+                const bText = b.cells[0].textContent;
+                return aText.localeCompare(bText);
+            });
+
+            const tbody = table.getElementsByTagName('tbody')[0];
+            tbody.innerHTML = '';
+            sortedRows.forEach(row => tbody.appendChild(row));
+        }
+
+        function toggleStriped() {
+            const table = document.getElementById('demo-table');
+            table.classList.toggle('striped');
+        }
+
+        // Copy Code Function
+        function copyCode(button) {
+            const pre = button.parentNode;
+            const code = pre.querySelector('code');
+            const text = code.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

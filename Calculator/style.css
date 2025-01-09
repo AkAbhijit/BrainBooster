@@ -1,16 +1,22 @@
-/* General Reset */
+:root {
+    --primary: #4a90e2;
+    --secondary: #50c878;
+    --background: #1a1a2e;
+    --card-bg: #16213e;
+    --text: #ffffff;
+    --error: #ff6b6b;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and Background */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #121212;
-    /* Dark background for contrast */
-    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
@@ -19,203 +25,182 @@ body {
 
 .container {
     width: 90%;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 2rem;
 }
 
-/* Header */
 header {
-    background: linear-gradient(135deg, #1e3a8a, #4e73df);
-    /* Deep gradient */
-    color: #fff;
-    padding: 40px 20px;
-    border-radius: 0 0 25px 25px;
-    border-bottom: 4px solid #4e73df;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-}
-
-header .logo {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-header .header-content {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 2rem 0;
     text-align: center;
-    flex: 1;
+    position: relative;
+    overflow: hidden;
 }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #e09413;
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon fill="rgba(255,255,255,0.05)" points="0,100 100,0 100,100"/></svg>');
+    background-size: cover;
 }
 
-header p {
-    font-size: 1rem;
-    color: #ddd;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
 }
 
-/* Card */
 .card {
-    background: #222;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    margin-bottom: 30px;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-.card h2 {
-    font-size: 1.6rem;
-    color: #4e73df;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-/* Input Group */
 .input-group {
-    margin-bottom: 25px;
+    margin-bottom: 1.5rem;
 }
 
-.input-group label {
+label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-    color: #ddd;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
-.input-group input {
+input[type="number"] {
     width: 100%;
-    padding: 14px;
-    border: 1px solid #444;
+    padding: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text);
     font-size: 1rem;
-    color: #fff;
-    background: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input-group input:focus {
+input[type="number"]:focus {
     outline: none;
-    border-color: #4e73df;
-    /* Bright blue focus */
-    box-shadow: 0 0 8px rgba(78, 115, 223, 0.6);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
 }
 
-/* Buttons */
 button {
     width: 100%;
-    padding: 14px;
-    background: #4e73df;
-    /* Bright blue */
+    padding: 1rem;
     border: none;
-    border-radius: 25px;
-    font-size: 1.1rem;
+    border-radius: 8px;
+    background-color: var(--primary);
     color: white;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-button i {
-    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 button:hover {
-    background: #5a84f5;
-    /* Darker blue */
-    transform: translateY(-3px);
+    background-color: #3a7bc8;
 }
 
-/* Hidden Sections */
-.hidden {
+button:active {
+    transform: scale(0.98);
+}
+
+#resultSection, #finalResult {
     display: none;
 }
 
-/* Footer */
-footer {
-    background: #1e3a8a;
-    /* Deep blue background */
-    color: #fff;
-    padding: 25px 20px;
+.result-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.percentage-display {
+    font-size: 3rem;
+    font-weight: 700;
     text-align: center;
-    border-top: 3px solid #4e73df;
-    /* Accent line */
-    border-radius: 25px 25px 0 0;
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.message {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-buttons button {
+    flex: 1;
+}
+
+footer {
     margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-footer a {
-    color: #ddd;
-    text-decoration: none;
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
 }
 
-footer p {
-    font-size: 1rem;
-    margin: 5px 0;
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-footer i {
-    color: #e74c3c;
-    /* Red heart color */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
 }
 
-/* Responsive Design */
-/* Responsive Design */
-@media (max-width: 600px) {
+/* Progress Bar Styles */
+.progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
 
-    /* Header Adjustments */
-    header {
-        padding: 20px 15px;
-    }
-
-    header .logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        padding: 15px 10px;
-    }
-
-    footer p {
-        font-size: 0.9rem;
-    }
-
-    footer i {
-        font-size: 0.8rem;
-    }
-
-    .card h2 {
-        font-size: 1.4rem;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 12px;
-    }
+.progress-bar {
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    transition: width 0.5s ease;
 }
